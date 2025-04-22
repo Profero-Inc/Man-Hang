@@ -92,8 +92,6 @@ void drawbase4(){
     WINDOW* base4 = newwin(h4,w4,y4,x4);
     wmove(win,20,10);
     box(base4, 0,0);
-/*     wmove(base4,1,0);
-    wprintw(base4,"/"); */
     wrefresh(base4);
     wmove(base4,1,45);
     wrefresh(base4);
@@ -103,6 +101,72 @@ void drawbase4(){
     endwin();
 }
 
+
+void drawbase5(){
+    cbreak();
+    noecho();
+    int h5,w5,x5,y5;
+    if (Difficulty=="EASY")
+    {
+        h5=5;
+        w5=1;
+        y5=9;
+        x5=38;
+    }
+    else
+    {
+        h5=6;
+        w5=1;
+        y5=9;
+        x5=25;
+    }
+    
+    
+    WINDOW* base5 = newwin(h5,w5,y5,x5);
+    wmove(win,20,10);
+    box(base5, 0,0);
+    wrefresh(base5);
+    wmove(base5,1,45);
+    wrefresh(base5);
+    
+    getch();
+
+    endwin();
+}
+
+void drawhead(){
+    cbreak();
+    noecho();
+    int h6,w6,x6,y6;
+    if (Difficulty=="EASY")
+    {
+        h6=3;
+        w6=5;
+        y6=13;
+        x6=36;
+    }
+    else
+    {
+        h6=3;
+        w6=5;
+        y6=13;
+        x6=23;
+    }
+    
+    
+    WINDOW* head = newwin(h6,w6,y6,x6);
+    wmove(win,20,10);
+    // box(head, 0,0);
+
+    wborder(head, 0, 0, 0, 0, 0, 0, 0, 0);
+    wrefresh(head);
+    wmove(head,1,45);
+    wrefresh(head);
+    
+    getch();
+
+    endwin();
+}
 
 void drawgameui(){
     cbreak();
@@ -123,8 +187,10 @@ void drawgameui(){
 
 int main(){
 drawgameui();
-/* drawbase();
-drawbase2(); */
+//drawbase();
+//drawbase2();
 drawbase3();
 drawbase4();
+drawbase5();
+drawhead();
 }
