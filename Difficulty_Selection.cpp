@@ -7,7 +7,7 @@ bool check(string word)
 {
     for (int i = 0; i < word.length(); i++)
     {
-        if (!(isalpha(word[i]) || word[i] == ' '))
+        if (!(isalpha(word[i])))
         {
             return false;
         }
