@@ -30,7 +30,7 @@ void sorting()
                 cout << "Invalid word: " << word << endl;
                 continue; // Skip invalid words
             }
-            if (word.length() >= 10)
+            else if (word.length() >= 10)
             {
                 Hard << word << endl;
             }
