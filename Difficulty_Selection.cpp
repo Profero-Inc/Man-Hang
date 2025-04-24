@@ -28,7 +28,7 @@ void sorting()
             if (check(word) == false)
             {
                 cout << "Invalid word: " << word << endl;
-                continue; // Skip invalid words
+                continue;
             }
             else if (word.length() >= 10)
             {
