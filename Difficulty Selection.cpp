@@ -3,7 +3,17 @@
 #include <string>
 
 using namespace std;
-
+bool check(string word)
+{
+    for (int i = 0; i < word.length(); i++)
+    {
+        if (!isalpha(word[i]))
+        {
+            return false;
+        }
+    }
+    return true;
+}
 void sorting()
 {
     ifstream Sample("words.txt");
@@ -15,6 +25,11 @@ void sorting()
     {
         while (getline(Sample, word))
         {
+            if (check(word) == false)
+            {
+                cout << "Invalid word: " << word << endl;
+                continue; // Skip invalid words
+            }
             if (word.length() >= 10)
             {
                 Hard << word << endl;
