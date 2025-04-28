@@ -1,8 +1,8 @@
-#include <iostream>
-#include "Headers/Total.h"
+#include <iostream>          // For input and output
+#include "Headers/Total.h"    // Include file that has drawgameui function
 using namespace std;
 
 int main(){
-    drawgameui();
-return(0);
+    drawgameui();             // Call function to draw the game screen
+    return(0);                // End the program
 }
