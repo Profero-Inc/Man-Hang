@@ -19,7 +19,7 @@ void sorting()
     ifstream Sample("words.txt");
     ofstream Easy("easy.txt", ios::app);
     ofstream Medium("medium.txt", ios::app);
-    ofstream Hard("hard.txt", ios::app);  
+    ofstream Hard("hard.txt", ios::app);
     string word;
     if (Sample.is_open())
     {
