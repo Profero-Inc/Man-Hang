@@ -1,0 +1,8 @@
+Prepare icon:
+x86_64-w64-mingw32-windres gicon.rc -O coff -o gicon.res
+
+Compile game:
+x86_64-w64-mingw32-g++ Hangman_Windows.cpp Functions_Windows.cpp -I./PDCursesMod-master -L./PDCursesMod-master/wingui gicon.res -o Hangman.exe -lpdcurses -lwinmm -lgdi32 -lcomdlg32 -static-libstdc++ -mwindows -static
+
+Remove mingw:
+sudo pacman -Rcs mingw-w64-gcc
