@@ -11,7 +11,7 @@ string Word;
 
 int flag=0;
 
-WINDOW* win = nullptr;
+WINDOW* win = newwin(22,92,1,2);
 
 int main(){
     cout << "Checking Dependencies"<< endl;

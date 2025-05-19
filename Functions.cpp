@@ -536,3 +536,5 @@ void drawrleg(){
         wrefresh(win);
     }
 }
+
+
