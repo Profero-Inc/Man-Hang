@@ -1,43 +1,35 @@
-#include <iostream>   // For input and output
-#include <fstream>    // For working with files
-#include <string>     // For using strings
+#include <iostream>
+#include <fstream>
+#include <string>
 
 using namespace std;
-
-// Check if the word has only letters
 bool check(string word)
 {
     for (int i = 0; i < word.length(); i++)
     {
         if (!isalpha(word[i]))
         {
-            return false;    // Return false if a character is not a letter
+            return false;
         }
     }
-    return true;             // Return true if all characters are letters
+    return true;
 }
-
-// Sort words by their length and save them into different files
-void sorting()
+void sorting(string w)
 {
-    ifstream Sample("words.txt");                // Open the file to read words
-    ofstream Easy("easy.txt", ios::app);          // Open file for easy words
-    ofstream Medium("medium.txt", ios::app);      // Open file for medium words
-    ofstream Hard("hard.txt", ios::app);          // Open file for hard words
-
-    string word;   // Store the word
-
-    if (Sample.is_open())   // Check if the file opened correctly
+    ifstream Sample(w);
+    ofstream Easy("EASY.txt", ios::app);
+    ofstream Medium("NORMAL.txt", ios::app);
+    ofstream Hard("HARD.txt", ios::app);  
+    string word;
+    if (Sample.is_open())
     {
-        while (getline(Sample, word))   // Read words one by one
+        while (getline(Sample, word))
         {
-            if (check(word) == false)   // If the word is invalid, skip it
+            if (check(word) == false)
             {
                 cout << "Invalid word: " << word << endl;
-                continue;
+                continue; // Skip invalid words
             }
-
-            // Save the word to the correct file based on its length
             if (word.length() >= 10)
             {
                 Hard << word << endl;
@@ -54,12 +46,12 @@ void sorting()
     }
     else
     {
-        cout << "File not found" << endl;   // Show error if file not opened
+        cout << "File not found" << endl;
     }
 }
-
 int main()
 {
-    sorting();    // Start sorting the words
-    return 0;     // End the program
+    sorting("words.txt");
+    sorting("Hard(Additional).txt");
+    return 0;
 }
